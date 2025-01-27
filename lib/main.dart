@@ -1,6 +1,8 @@
 import 'package:fitness_loginpage/view/on_boarding/on_boarding_view.dart';
 import 'package:flutter/material.dart';
 
+import 'common/color_extention.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -12,7 +14,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'PowerPlus',
       theme: ThemeData(
         // This is the theme of your application.
         //
@@ -29,8 +31,8 @@ class MyApp extends StatelessWidget {
         //
         // This works for code too, not just values: Most code changes can be
         // tested with just a hot reload.
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
+        primaryColor: TColor.primaryColor1,
+        fontFamily: "Poppins"
       ),
       home: const OnBoardingView(),
     );
