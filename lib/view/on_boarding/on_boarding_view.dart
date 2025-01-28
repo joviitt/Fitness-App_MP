@@ -34,13 +34,13 @@ class _OnBoardingViewState extends State<OnBoardingView> {
     {
       "title": "Track Your Goal",
       "subtitle":
-          "Don't worry if you have trouble determining your goals, We can help you determine your goals and track them.",
+          "Don't worry if you have trouble determining your goals. We can help you determine your goals and track them.",
       "image": "assets/images/pic 1.png"
     },
     {
       "title": "Get Burn",
       "subtitle":
-          "Let’s keep burning, to achieve your goals, it hurts only temporarily, if you give up now you will be in pain forever",
+          "Let’s keep burning to achieve your goals, it hurts only temporarily, if you give up now you will be in pain forever",
       "image": "assets/images/pic 2.png"
     },
     {
