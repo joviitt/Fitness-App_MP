@@ -1,26 +1,20 @@
-
-
-
-//import 'package:fitness/view/login/complete_profile_view.dart';
-
 // ignore_for_file: deprecated_member_use
 
-import 'package:fitness_loginpage/common/color_extention.dart';
-// ignore: unused_import
-import 'package:fitness_loginpage/common_widget/round_button.dart';
 import 'package:fitness_loginpage/common_widget/round_textfield.dart';
 import 'package:fitness_loginpage/view/login/login_view.dart';
-//import 'package:fitness_loginpage/view/login/profile_view.dart';
 import 'package:flutter/material.dart';
 
-class SignUpView extends StatefulWidget {
-  const SignUpView({super.key});
+import '../../common/color_extention.dart';
+
+class CompleteProfileView extends StatefulWidget {
+  const CompleteProfileView({super.key});
 
   @override
-  State<SignUpView> createState() => _SignUpViewState();
+  State<CompleteProfileView> createState() => CompleteProfileViewState();
 }
 
-class _SignUpViewState extends State<SignUpView> {
+class CompleteProfileViewState extends State<CompleteProfileView>
+{
   bool isCheck = false;
   @override
   Widget build(BuildContext context) {
@@ -75,14 +69,7 @@ class _SignUpViewState extends State<SignUpView> {
                   icon: "assets/images/passwd.png",
                   obscureText: true,
                   rigtIcon: TextButton(
-                       onPressed: () {},
-                       //{
-                      //           setState(() {
-                      //               // ignore: unused_label
-                      //               obscureText: false;
-                      //           });
-                            
-                      // },
+                      onPressed: () {},
                       child: Container(
                           alignment: Alignment.center,
                           width: 20,
@@ -125,9 +112,9 @@ class _SignUpViewState extends State<SignUpView> {
                 SizedBox(
                   height: media.width * 0.4,
                 ),
-                 RoundButton(title: "Register", onPressed: () {
+                // RoundButton(title: "Register", onPressed: () {
                 //   Navigator.push(context, MaterialPageRoute(builder: (context) => const CompleteProfileView()  ));
-                 }),
+                // }),
                 SizedBox(
                   height: media.width * 0.04,
                 ),
@@ -171,9 +158,9 @@ class _SignUpViewState extends State<SignUpView> {
                           borderRadius: BorderRadius.circular(15),
                         ),
                         child: Image.asset(
-                          "assets/images/google.png",
-                          width: 50,
-                          height: 50,
+                          "assets/img/google.png",
+                          width: 20,
+                          height: 20,
                         ),
                       ),
                     ),
@@ -197,9 +184,9 @@ class _SignUpViewState extends State<SignUpView> {
                           borderRadius: BorderRadius.circular(15),
                         ),
                         child: Image.asset(
-                          "assets/images/facebook.png",
-                          width: 50,
-                          height: 50,
+                          "assets/img/facebook.png",
+                          width: 20,
+                          height: 20,
                         ),
                       ),
                     )
@@ -245,4 +232,5 @@ class _SignUpViewState extends State<SignUpView> {
       ),
     );
   }
+
 }

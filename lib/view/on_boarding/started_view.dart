@@ -38,14 +38,14 @@ class _StartedViewState extends State<StartedView> {
             children: [
               const Spacer(),
               Text(
-                "Fitness",
+                "PowerPlus",
                 style: TextStyle(
                     color: TColor.black,
                     fontSize: 36,
                     fontWeight: FontWeight.w700),
               ),
               Text(
-                "Everybody Can Train",
+                "Fuel Your Strength",
                 style: TextStyle(
                   color: TColor.gray,
                   fontSize: 18,
