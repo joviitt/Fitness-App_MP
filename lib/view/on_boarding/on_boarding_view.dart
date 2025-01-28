@@ -40,7 +40,7 @@ class _OnBoardingViewState extends State<OnBoardingView> {
     {
       "title": "Get Burn",
       "subtitle":
-          "Let’s keep burning to achieve your goals, it hurts only temporarily, if you give up now you will be in pain forever",
+          "Let’s keep burning to achieve your goals. It only hurts temporarily, if you give up now you will be in pain forever",
       "image": "assets/images/pic 2.png"
     },
     {
