@@ -1,5 +1,5 @@
 
-//import 'package:fitness_loginpage/view/login/signup_view.dart';
+import 'package:fitness_loginpage/view/login/signup_view.dart';
 import 'package:flutter/material.dart';
 
 import '../../common/color_extention.dart';
@@ -107,7 +107,7 @@ class _OnBoardingViewState extends State<OnBoardingView> {
                         // Open Welcome Screen
                         // ignore: avoid_print
                         print("Open Welcome Screen");
-                        //Navigator.push(context, MaterialPageRoute(builder: (context) => const SignUpView() ));
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => const SignUpView() ));
                       }
                       
                   },),
