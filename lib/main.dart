@@ -1,7 +1,7 @@
 
-import 'package:fitness_loginpage/view/login/signup_view.dart';
-import 'package:fitness_loginpage/view/on_boarding/on_boarding_view.dart';
+//import 'package:fitness_loginpage/view/login/signup_view.dart';
 import 'package:fitness_loginpage/view/on_boarding/started_view.dart';
+//import 'package:fitness_loginpage/view/on_boarding/on_boarding_view.dart';
 //import 'package:fitness_loginpage/view/on_boarding/on_boarding_view.dart';
 import 'package:flutter/material.dart';
 
@@ -38,7 +38,7 @@ class MyApp extends StatelessWidget {
         primaryColor: TColor.primaryColor1,
         fontFamily: "Poppins"
       ),
-      home: const SignUpView(),
+      home: const StartedView(),
     );
   }
 }
