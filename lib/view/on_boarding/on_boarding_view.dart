@@ -95,7 +95,7 @@ class _OnBoardingViewState extends State<OnBoardingView> {
           
                          selectPage = selectPage + 1;
 
-                        controller.animateToPage(selectPage, duration: const Duration(milliseconds: 600), curve: Curves.bounceInOut);
+                        controller.animateToPage(selectPage, duration: const Duration(milliseconds: 400), curve: Curves.linear);
                         
                          //controller.jumpToPage(selectPage);
                         
