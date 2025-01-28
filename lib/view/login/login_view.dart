@@ -1,18 +1,21 @@
-// ignore_for_file: deprecated_member_use
 
-import 'package:fitness_loginpage/common/color_extention.dart';
+
+import 'package:fitness_loginpage/common_widget/round_button.dart';
 import 'package:fitness_loginpage/common_widget/round_textfield.dart';
+import 'package:fitness_loginpage/view/login/profile.dart';
 import 'package:flutter/material.dart';
+
+import '../../common/color_extention.dart';
 
 class LoginView extends StatefulWidget {
   const LoginView({super.key});
 
   @override
-  State<LoginView> createState() => LoginViewState();
+  State<LoginView> createState() => _LoginViewState();
 }
 
-class LoginViewState extends State<LoginView>{
-bool isCheck = false;
+class _LoginViewState extends State<LoginView> {
+  bool isCheck = false;
   @override
   Widget build(BuildContext context) {
     var media = MediaQuery.of(context).size;
@@ -20,7 +23,8 @@ bool isCheck = false;
       backgroundColor: TColor.white,
       body: SingleChildScrollView(
         child: SafeArea(
-          child: Padding(
+          child: Container(
+            height: media.height * 0.9,
             padding: const EdgeInsets.symmetric(horizontal: 20),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -30,7 +34,7 @@ bool isCheck = false;
                   style: TextStyle(color: TColor.gray, fontSize: 16),
                 ),
                 Text(
-                  "Create an Account",
+                  "Welcome Back",
                   style: TextStyle(
                       color: TColor.black,
                       fontSize: 20,
@@ -38,17 +42,6 @@ bool isCheck = false;
                 ),
                 SizedBox(
                   height: media.width * 0.05,
-                ),
-                const RoundTextField(
-                  hitText: "First Name",
-                  icon: "assets/images/user_fn.png",
-                ),
-                SizedBox(
-                  height: media.width * 0.04,
-                ),
-                const RoundTextField(
-                  hitText: "Last Name",
-                  icon: "assets/images/user_ln.png",
                 ),
                 SizedBox(
                   height: media.width * 0.04,
@@ -80,38 +73,27 @@ bool isCheck = false;
                           ))),
                 ),
                 Row(
-                  // crossAxisAlignment: CrossAxisAlignment.,
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    IconButton(
-                      onPressed: () {
-                        setState(() {
-                          isCheck = !isCheck;
-                        });
-                      },
-                      icon: Icon(
-                        isCheck
-                            ? Icons.check_box_outlined
-                            : Icons.check_box_outline_blank_outlined,
-                        color: TColor.gray,
-                        size: 20,
-                      ),
+                    Text(
+                      "Forgot your password?",
+                      style: TextStyle(
+                          color: TColor.gray,
+                          fontSize: 10,
+                          decoration: TextDecoration.underline),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.only(top: 8),
-                      child:  Text(
-                          "By continuing you accept our Privacy Policy and\nTerm of Use",
-                          style: TextStyle(color: TColor.gray, fontSize: 10),
-                        ),
-                     
-                    )
                   ],
                 ),
-                SizedBox(
-                  height: media.width * 0.4,
-                ),
-                // RoundButton(title: "Register", onPressed: () {
-                //   Navigator.push(context, MaterialPageRoute(builder: (context) => const CompleteProfileView()  ));
-                // }),
+               const Spacer(),
+                RoundButton(
+                    title: "Login",
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) =>
+                                  const CompleteProfileView()));
+                    }),
                 SizedBox(
                   height: media.width * 0.04,
                 ),
@@ -155,17 +137,15 @@ bool isCheck = false;
                           borderRadius: BorderRadius.circular(15),
                         ),
                         child: Image.asset(
-                          "assets/img/google.png",
-                          width: 20,
-                          height: 20,
+                          "assets/images/google.png",
+                          width: 50,
+                          height: 50,
                         ),
                       ),
                     ),
-
-                     SizedBox(
+                    SizedBox(
                       width: media.width * 0.04,
                     ),
-
                     GestureDetector(
                       onTap: () {},
                       child: Container(
@@ -181,9 +161,9 @@ bool isCheck = false;
                           borderRadius: BorderRadius.circular(15),
                         ),
                         child: Image.asset(
-                          "assets/img/facebook.png",
-                          width: 20,
-                          height: 20,
+                          "assets/images/facebook.png",
+                          width: 50,
+                          height: 50,
                         ),
                       ),
                     )
@@ -194,23 +174,20 @@ bool isCheck = false;
                 ),
                 TextButton(
                   onPressed: () {
-                     Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => LoginView()));
+                    Navigator.pop(context);
                   },
                   child: Row(
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       Text(
-                        "Already have an account? ",
+                        "Don’t have an account yet? ",
                         style: TextStyle(
                           color: TColor.black,
                           fontSize: 14,
                         ),
                       ),
                       Text(
-                        "Login",
+                        "Register",
                         style: TextStyle(
                             color: TColor.black,
                             fontSize: 14,
@@ -229,6 +206,6 @@ bool isCheck = false;
       ),
     );
   }
-
 }
+
 
