@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "103016701862",
+    "project_id": "login-database-7793d",
+    "storage_bucket": "login-database-7793d.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:103016701862:android:00a0451c954d22ba55f967",
+        "android_client_info": {
+          "package_name": "com.example.fitness_loginpage"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDLSUBmfkc8QRvqcM9QWvSeQybnzqvaLyM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

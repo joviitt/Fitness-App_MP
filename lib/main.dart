@@ -1,8 +1,10 @@
 
-//import 'package:fitness_loginpage/view/login/signup_view.dart';
+// ignore_for_file: unused_import
+
+import 'package:fitness_loginpage/view/login/signup_view.dart';
 import 'package:fitness_loginpage/view/login/login_view.dart';
 //import 'package:fitness_loginpage/view/on_boarding/on_boarding_view.dart';
-//import 'package:fitness_loginpage/view/on_boarding/started_view.dart';
+import 'package:fitness_loginpage/view/on_boarding/started_view.dart';
 //import 'package:fitness_loginpage/view/on_boarding/on_boarding_view.dart';
 //import 'package:fitness_loginpage/view/on_boarding/on_boarding_view.dart';
 import 'package:flutter/material.dart';

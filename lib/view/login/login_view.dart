@@ -1,8 +1,11 @@
 
 
+// ignore_for_file: deprecated_member_use
+
 import 'package:fitness_loginpage/common_widget/round_button.dart';
 import 'package:fitness_loginpage/common_widget/round_textfield.dart';
 import 'package:fitness_loginpage/view/login/profile.dart';
+import 'package:fitness_loginpage/view/login/signup_view.dart';
 import 'package:flutter/material.dart';
 
 import '../../common/color_extention.dart';
@@ -85,14 +88,16 @@ class _LoginViewState extends State<LoginView> {
                   ],
                 ),
                const Spacer(),
-                RoundButton(
+               RoundButton(
                     title: "Login",
+                    icon: "assets/images/Login.png",
                     onPressed: () {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
                               builder: (context) =>
                                   const CompleteProfileView()));
+
                     }),
                 SizedBox(
                   height: media.width * 0.04,
@@ -186,13 +191,22 @@ class _LoginViewState extends State<LoginView> {
                           fontSize: 14,
                         ),
                       ),
-                      Text(
-                        "Register",
-                        style: TextStyle(
-                            color: TColor.black,
-                            fontSize: 14,
-                            fontWeight: FontWeight.w700),
-                      )
+                      TextButton(
+                        child: Text(
+                          "Register",
+                          style: TextStyle(
+                              color: TColor.black,
+                              fontSize: 14,
+                              fontWeight: FontWeight.w700),
+                        ),
+                        onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) =>
+                                    const SignUpView()));
+                              },
+                      ),
                     ],
                   ),
                 ),

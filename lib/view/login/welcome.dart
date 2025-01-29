@@ -1,8 +1,8 @@
 
 import 'package:flutter/material.dart';
 import '../../common/color_extention.dart';
-import '../../common_widget/round_button.dart';
-import '../main_tab/main_tab_view.dart';
+//import '../../common_widget/round_button.dart';
+//import '../main_tab/main_tab_view.dart';
 
 class WelcomeView extends StatefulWidget {
   const WelcomeView({super.key});
@@ -51,18 +51,18 @@ SizedBox(
               ),
              const Spacer(),
 
-               RoundButton(
-                  title: "Go To Home",
-                  onPressed: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const MainTabView()));
-                  }),
+        //        RoundButton(
+        //           title: "Go To Home",
+        //           onPressed: () {
+        //             Navigator.push(
+        //                 context,
+        //                 MaterialPageRoute(
+        //                     builder: (context) => const MainTabView()));
+        //           }),
                
-            ],
-          ),
-        ),
+             ],
+           ),
+         ),
 
       ),
     );

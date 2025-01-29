@@ -1,10 +1,12 @@
 
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:fitness/view/login/welcome_view.dart';
+import 'package:fitness_loginpage/view/login/welcome.dart';
 import 'package:flutter/material.dart';
 
-import '../../common/colo_extension.dart';
+
+import '../../common/color_extention.dart';
 import '../../common_widget/round_button.dart';
+
 
 class WhatYourGoalView extends StatefulWidget {
   const WhatYourGoalView({super.key});
@@ -14,7 +16,7 @@ class WhatYourGoalView extends StatefulWidget {
 }
 
 class _WhatYourGoalViewState extends State<WhatYourGoalView> {
-  CarouselController buttonCarouselController = CarouselController();
+  CarouselController carouselcontroller = CarouselController();
 
   List goalArr = [
     {
@@ -40,13 +42,7 @@ class _WhatYourGoalViewState extends State<WhatYourGoalView> {
   @override
   Widget build(BuildContext context) {
     var media = MediaQuery.of(context).size;
-    return Scaffold(
-      backgroundColor: TColor.white,
-      body: SafeArea(
-          child: Stack(
-        children: [
-          Center(
-            child: CarouselSlider(
+    var carouselSlider = CarouselSlider(
               items: goalArr
                   .map(
                     (gObj) => Container(
@@ -98,7 +94,8 @@ class _WhatYourGoalViewState extends State<WhatYourGoalView> {
                     ),
                   )
                   .toList(),
-              carouselController: buttonCarouselController,
+                  
+              carouselController: carouselController,
               options: CarouselOptions(
                 autoPlay: false,
                 enlargeCenterPage: true,
@@ -106,7 +103,14 @@ class _WhatYourGoalViewState extends State<WhatYourGoalView> {
                 aspectRatio: 0.74,
                 initialPage: 0,
               ),
-            ),
+            );
+    return Scaffold(
+      backgroundColor: TColor.white,
+      body: SafeArea(
+          child: Stack(
+        children: [
+          Center(
+            child: carouselSlider,
           ),
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 25),
@@ -139,7 +143,7 @@ class _WhatYourGoalViewState extends State<WhatYourGoalView> {
                           context,
                           MaterialPageRoute(
                               builder: (context) => const WelcomeView()));
-                    }),
+                    }, icon: '',),
               ],
             ),
           )

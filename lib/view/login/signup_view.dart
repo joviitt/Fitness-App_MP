@@ -6,7 +6,6 @@
 // ignore_for_file: deprecated_member_use
 
 import 'package:fitness_loginpage/common/color_extention.dart';
-// ignore: unused_import
 import 'package:fitness_loginpage/common_widget/round_button.dart';
 import 'package:fitness_loginpage/common_widget/round_textfield.dart';
 import 'package:fitness_loginpage/view/login/login_view.dart';
@@ -15,7 +14,7 @@ import 'package:flutter/material.dart';
 
 class SignUpView extends StatefulWidget {
   const SignUpView({super.key});
-  
+
   @override
   State<SignUpView> createState() => _SignUpViewState();
 }
@@ -129,7 +128,7 @@ class _SignUpViewState extends State<SignUpView> {
                 ),
                  RoundButton(title: "Register", onPressed: () {
                 //   Navigator.push(context, MaterialPageRoute(builder: (context) => const CompleteProfileView()  ));
-                 }),
+                 }, icon: '',),
                 SizedBox(
                   height: media.width * 0.04,
                 ),
