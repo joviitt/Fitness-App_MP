@@ -21,7 +21,7 @@ class RoundButton extends StatelessWidget {
       this.fontSize = 16,
       this.elevation = 1,
       this.fontWeight = FontWeight.w700,
-      required this.onPressed, required String icon});
+      required this.onPressed, String? icon});
 
   @override
   Widget build(BuildContext context) {

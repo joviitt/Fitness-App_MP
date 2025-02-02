@@ -3,7 +3,7 @@
 
 //import 'package:fitness/view/login/complete_profile_view.dart';
 
-// ignore_for_file: deprecated_member_use
+// ignore_for_file: deprecated_member_use, avoid_print
 
 import 'package:fitness_loginpage/common/color_extention.dart';
 import 'package:fitness_loginpage/common_widget/round_button.dart';

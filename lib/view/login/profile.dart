@@ -1,6 +1,7 @@
 
 
 //import 'package:fitness/view/login/what_your_goal_view.dart';
+import 'package:fitness_loginpage/view/login/goal.dart';
 import 'package:flutter/material.dart';
 
 import '../../common/color_extention.dart';
@@ -30,7 +31,7 @@ class _CompleteProfileViewState extends State<CompleteProfileView> {
             child: Column(
               children: [
                 Image.asset(
-                  "assets/img/complete_profile.png",
+                  "assets/images/wrkt.png",
                   width: media.width,
                   fit: BoxFit.fitWidth,
                 ),
@@ -68,7 +69,7 @@ class _CompleteProfileViewState extends State<CompleteProfileView> {
                                   padding: const EdgeInsets.symmetric(horizontal: 15),
                                   
                                   child: Image.asset(
-                                    "assets/img/gender.png",
+                                    "assets/images/2 User.png",
                                     width: 20,
                                     height: 20,
                                     fit: BoxFit.contain,
@@ -110,7 +111,7 @@ class _CompleteProfileViewState extends State<CompleteProfileView> {
                       RoundTextField(
                         controller: txtDate,
                         hitText: "Date of Birth",
-                        icon: "assets/img/date.png",
+                        icon: "assets/images/Calendar.png",
                       ),
                       SizedBox(
                         height: media.width * 0.04,
@@ -121,7 +122,7 @@ class _CompleteProfileViewState extends State<CompleteProfileView> {
                             child: RoundTextField(
                               controller: txtDate,
                               hitText: "Your Weight",
-                              icon: "assets/img/weight.png",
+                              icon: "assets/images/weight-scale 1.png",
                             ),
                           ),
                           const SizedBox(
@@ -154,7 +155,7 @@ class _CompleteProfileViewState extends State<CompleteProfileView> {
                             child: RoundTextField(
                               controller: txtDate,
                               hitText: "Your Height",
-                              icon: "assets/img/hight.png",
+                              icon: "assets/images/Swap.png",
                             ),
                           ),
                           const SizedBox(
@@ -181,15 +182,15 @@ class _CompleteProfileViewState extends State<CompleteProfileView> {
                       SizedBox(
                         height: media.width * 0.07,
                       ),
-                      // RoundButton(
-                      //     title: "Next >",
-                      //     onPressed: () {
-                      //       Navigator.push(
-                      //           context,
-                      //           MaterialPageRoute(
-                      //               builder: (context) =>
-                      //                   const WhatYourGoalView()));
-                      //     }),
+                      RoundButton(
+                          title: "Next >",
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) =>
+                                        const WhatYourGoalView()));
+                          }),
                     ],
                   ),
                 ),
