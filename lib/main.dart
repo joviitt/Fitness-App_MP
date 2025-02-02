@@ -1,6 +1,7 @@
 
 // ignore_for_file: unused_import
 
+import 'package:fitness_loginpage/firebase_options.dart';
 import 'package:fitness_loginpage/view/login/signup_view.dart';
 import 'package:fitness_loginpage/view/login/login_view.dart';
 //import 'package:fitness_loginpage/view/on_boarding/on_boarding_view.dart';
@@ -8,10 +9,12 @@ import 'package:fitness_loginpage/view/on_boarding/started_view.dart';
 //import 'package:fitness_loginpage/view/on_boarding/on_boarding_view.dart';
 //import 'package:fitness_loginpage/view/on_boarding/on_boarding_view.dart';
 import 'package:flutter/material.dart';
-
+import 'package:firebase_core/firebase_core.dart';
 import 'common/color_extention.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   runApp(const MyApp());
 }
 
