@@ -30,7 +30,7 @@ SizedBox(
                 height: media.width * 0.1,
               ),
                Image.asset(
-                "assets/img/welcome.png",
+                "assets/images/welcome.png",
                 width: media.width * 0.75,
                 fit: BoxFit.fitWidth,
               ),
@@ -38,7 +38,7 @@ SizedBox(
                 height: media.width * 0.1,
               ),
               Text(
-                "Welcome, Stefani",
+                "Welcome",
                 style: TextStyle(
                     color: TColor.black,
                     fontSize: 20,
