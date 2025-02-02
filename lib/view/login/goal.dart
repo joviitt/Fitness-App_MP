@@ -22,7 +22,7 @@ class _WhatYourGoalViewState extends State<WhatYourGoalView> {
 
   List goalArr = [
     {
-      "image": "assets/img/goal_1.png",
+      "image": "assets/images/impr.shape.png",
       "title": "Improve Shape",
       "subtitle":
           "I have a low amount of body fat\nand need / want to build more\nmuscle"
