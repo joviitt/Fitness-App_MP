@@ -1,6 +1,4 @@
 
-
-//import 'package:fitness/view/login/what_your_goal_view.dart';
 import 'package:fitness_loginpage/view/login/goal.dart';
 import 'package:flutter/material.dart';
 
@@ -18,6 +16,8 @@ class CompleteProfileView extends StatefulWidget {
 
 class _CompleteProfileViewState extends State<CompleteProfileView> {
   TextEditingController txtDate = TextEditingController();
+  String? selectedGender;
+
 
   @override
   Widget build(BuildContext context) {
@@ -78,7 +78,8 @@ class _CompleteProfileViewState extends State<CompleteProfileView> {
                             
                               Expanded(
                                 child: DropdownButtonHideUnderline(
-                                  child: DropdownButton(
+                                  child: DropdownButton<String>(
+                                    value:selectedGender,
                                     items: ["Male", "Female"]
                                         .map((name) => DropdownMenuItem(
                                               value: name,
@@ -90,7 +91,12 @@ class _CompleteProfileViewState extends State<CompleteProfileView> {
                                               ),
                                             ))
                                         .toList(),
-                                    onChanged: (value) {},
+                                    onChanged: (value) {
+                                      setState(() {
+                                              selectedGender = value; // Update the selected value
+                                                    });
+                                                },
+                                    
                                     isExpanded: true,
                                     hint: Text(
                                       "Choose Gender",
@@ -120,7 +126,7 @@ class _CompleteProfileViewState extends State<CompleteProfileView> {
                         children: [
                           Expanded(
                             child: RoundTextField(
-                              controller: txtDate,
+                    
                               hitText: "Your Weight",
                               icon: "assets/images/weight-scale 1.png",
                             ),
@@ -153,7 +159,7 @@ class _CompleteProfileViewState extends State<CompleteProfileView> {
                         children: [
                           Expanded(
                             child: RoundTextField(
-                              controller: txtDate,
+                            
                               hitText: "Your Height",
                               icon: "assets/images/Swap.png",
                             ),
