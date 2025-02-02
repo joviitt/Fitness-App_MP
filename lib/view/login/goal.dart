@@ -138,14 +138,20 @@ class _WhatYourGoalViewState extends State<WhatYourGoalView> {
                 SizedBox(
                   height: media.width * 0.05,
                 ),
-                RoundButton(
-                    title: "Confirm",
-                    onPressed: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => const WelcomeView()));
-                    }, icon: '',),
+                Padding(
+                        padding: const EdgeInsets.all(19.0), // Adjust padding as needed
+                        child: RoundButton(
+                          title: "Confirm",
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => const WelcomeView()),
+                            );
+                          },
+                          icon: '',
+                        ),
+                      )
+,
               ],
             ),
           )
