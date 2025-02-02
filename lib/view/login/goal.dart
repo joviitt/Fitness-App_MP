@@ -2,6 +2,8 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:fitness_loginpage/view/login/welcome.dart';
 import 'package:flutter/material.dart';
+// ignore: unused_import
+import 'package:carousel_slider/carousel_controller.dart';
 
 
 import '../../common/color_extention.dart';
@@ -95,7 +97,7 @@ class _WhatYourGoalViewState extends State<WhatYourGoalView> {
                   )
                   .toList(),
                   
-              carouselController: carouselController,
+              //carouselController: carouselcontroller,
               options: CarouselOptions(
                 autoPlay: false,
                 enlargeCenterPage: true,

@@ -61,7 +61,7 @@ class _SignUpViewState extends State<SignUpView> {
                   SizedBox(
                     height: media.width * 0.05,
                   ),
-                  RoundTextField(
+                   RoundTextField(
                     hitText: 'First Name',
                     icon: "assets/images/user_fn.png",
                   ),
@@ -230,10 +230,7 @@ class _SignUpViewState extends State<SignUpView> {
                   ),
                   TextButton(
                     onPressed: () {
-                       Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => LoginView()));
+                       Navigator.pop(context);
                     },
                     child: Row(
                       mainAxisSize: MainAxisSize.min,
@@ -245,12 +242,19 @@ class _SignUpViewState extends State<SignUpView> {
                             fontSize: 14,
                           ),
                         ),
-                        Text(
-                          "Login",
+                        TextButton(
+                          child: Text("Login",
                           style: TextStyle(
                               color: TColor.black,
                               fontSize: 14,
                               fontWeight: FontWeight.w700),
+                        ),
+                        onPressed: () {
+                       Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const LoginView()));
+                    },
                         )
                       ],
                     ),
