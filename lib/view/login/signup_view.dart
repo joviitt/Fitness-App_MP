@@ -7,7 +7,7 @@
 
 import 'package:fitness_loginpage/common/color_extention.dart';
 import 'package:fitness_loginpage/common_widget/round_button.dart';
-import 'package:fitness_loginpage/common_widget/round_textfield.dart';
+import "package:fitness_loginpage/common_widget/round_textfield.dart";
 import 'package:fitness_loginpage/view/login/login_view.dart';
 //import 'package:fitness_loginpage/view/login/profile_view.dart';
 import 'package:flutter/material.dart';
@@ -21,8 +21,6 @@ class SignUpView extends StatefulWidget {
 }
 
 class _SignUpViewState extends State<SignUpView> {
-
-  var userForm= GlobalKey<FormState>();
   TextEditingController email=TextEditingController();
   TextEditingController password=TextEditingController();
 
@@ -30,8 +28,7 @@ class _SignUpViewState extends State<SignUpView> {
   { try {
       await FirebaseAuth.instance.createUserWithEmailAndPassword(email: email.text, password: password.text);
       print("Account created successfully");
-  }
-  catch(e)
+  }catch(e)
   {
     print(e);
   }}
@@ -64,14 +61,14 @@ class _SignUpViewState extends State<SignUpView> {
                   SizedBox(
                     height: media.width * 0.05,
                   ),
-                  const RoundTextField(
-                    hitText: "First Name",
+                  RoundTextField(
+                    hitText: 'First Name',
                     icon: "assets/images/user_fn.png",
                   ),
                   SizedBox(
                     height: media.width * 0.04,
                   ),
-                  const RoundTextField(
+                  RoundTextField(
                     hitText: "Last Name",
                     icon: "assets/images/user_ln.png",
                   ),
@@ -145,8 +142,7 @@ class _SignUpViewState extends State<SignUpView> {
                     height: media.width * 0.4,
                   ),
                    RoundButton(title: "Register",
-                    onPressed: () {
-                    if(userForm.currentState!.validate()){
+                    onPressed: () {{
                       //create an account
                       createAccount();
                     }
