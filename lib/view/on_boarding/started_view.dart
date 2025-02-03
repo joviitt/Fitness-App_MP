@@ -61,14 +61,14 @@ class _StartedViewState extends State<StartedView> {
                         ? RoundButtonType.textGradient
                         : RoundButtonType.bgGradient,
                     onPressed: () {
-                      
+                      if (isChangeColor) {
                         //GO Next Screen
                         Navigator.push(
                             context,
                             MaterialPageRoute(
                                 builder: (context) => const OnBoardingView()));
-                      },
-                    icon: '',
+                      }
+                    }, icon: '',
                   ),
                 ),
               )
