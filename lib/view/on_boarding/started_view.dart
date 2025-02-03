@@ -54,26 +54,21 @@ class _StartedViewState extends State<StartedView> {
               const Spacer(),
               SafeArea(
                 child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 15),
+                  padding: const EdgeInsets.all(20.0),
                   child: RoundButton(
                     title: "Get Started",
                     type: isChangeColor
                         ? RoundButtonType.textGradient
                         : RoundButtonType.bgGradient,
                     onPressed: () {
-                      if (isChangeColor) {
+                      
                         //GO Next Screen
                         Navigator.push(
                             context,
                             MaterialPageRoute(
                                 builder: (context) => const OnBoardingView()));
-                      } else {
-                        //Change Color
-                        setState(() {
-                          isChangeColor = true;
-                        });
-                      }
-                    }, icon: '',
+                      },
+                    icon: '',
                   ),
                 ),
               )
