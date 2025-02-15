@@ -30,6 +30,10 @@ class _SignUpViewState extends State<SignUpView> {
       print("Account created successfully");
   }catch(e)
   {
+    SnackBar messageSnackBar = SnackBar(content: Text("Error creating account"));
+
+    ScaffoldMessenger.of(context).showSnackBar(messageSnackBar);
+    
     print(e);
   }}
   
