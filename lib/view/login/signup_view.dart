@@ -9,6 +9,7 @@ import 'package:fitness_loginpage/common/color_extention.dart';
 import 'package:fitness_loginpage/common_widget/round_button.dart';
 import "package:fitness_loginpage/common_widget/round_textfield.dart";
 import 'package:fitness_loginpage/view/login/login_view.dart';
+import 'package:fitness_loginpage/view/login/profile.dart';
 //import 'package:fitness_loginpage/view/login/profile_view.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -27,13 +28,19 @@ class _SignUpViewState extends State<SignUpView> {
   Future<void> createAccount() async
   { try {
       await FirebaseAuth.instance.createUserWithEmailAndPassword(email: email.text, password: password.text);
+    Navigator.pushReplacement(context,MaterialPageRoute
+    (builder: (context){
+      return CompleteProfileView();
+    }));
       print("Account created successfully");
   }catch(e)
   {
-    SnackBar messageSnackBar = SnackBar(content: Text("Error creating account"));
+    SnackBar messageSnackBar = SnackBar(
+      backgroundColor: Colors.red,
+      content: Text(e.toString()));
 
     ScaffoldMessenger.of(context).showSnackBar(messageSnackBar);
-    
+
     print(e);
   }}
   
