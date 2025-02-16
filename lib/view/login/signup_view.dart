@@ -3,11 +3,12 @@
 
 //import 'package:fitness/view/login/complete_profile_view.dart';
 
-// ignore_for_file: deprecated_member_use, avoid_print
+// ignore_for_file: deprecated_member_use, avoid_print, unused_import
 
 import 'package:fitness_loginpage/common/color_extention.dart';
 import 'package:fitness_loginpage/common_widget/round_button.dart';
 import "package:fitness_loginpage/common_widget/round_textfield.dart";
+import 'package:fitness_loginpage/controllers/signup_controller.dart';
 import 'package:fitness_loginpage/view/login/login_view.dart';
 import 'package:fitness_loginpage/view/login/profile.dart';
 //import 'package:fitness_loginpage/view/login/profile_view.dart';
@@ -24,25 +25,6 @@ class SignUpView extends StatefulWidget {
 class _SignUpViewState extends State<SignUpView> {
   TextEditingController email=TextEditingController();
   TextEditingController password=TextEditingController();
-
-  Future<void> createAccount() async
-  { try {
-      await FirebaseAuth.instance.createUserWithEmailAndPassword(email: email.text, password: password.text);
-    Navigator.pushReplacement(context,MaterialPageRoute
-    (builder: (context){
-      return CompleteProfileView();
-    }));
-      print("Account created successfully");
-  }catch(e)
-  {
-    SnackBar messageSnackBar = SnackBar(
-      backgroundColor: Colors.red,
-      content: Text(e.toString()));
-
-    ScaffoldMessenger.of(context).showSnackBar(messageSnackBar);
-
-    print(e);
-  }}
   
   bool isCheck = false;
   @override
@@ -155,9 +137,9 @@ class _SignUpViewState extends State<SignUpView> {
                    RoundButton(title: "Register",
                     onPressed: () {{
                       //create an account
-                      createAccount();
+                      SignupController.createAccount(email: email.text, password: password.text, context: context);
                     }
-                  //   Navigator.push(context, MaterialPageRoute(builder: (context) => const CompleteProfileView()  ));
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => const LoginView()  ));
                    }, icon: '',),
                   SizedBox(
                     height: media.width * 0.04,

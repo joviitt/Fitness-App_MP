@@ -4,6 +4,7 @@
 
 import 'package:fitness_loginpage/common_widget/round_button.dart';
 import 'package:fitness_loginpage/common_widget/round_textfield.dart';
+import 'package:fitness_loginpage/controllers/login_controller.dart';
 import 'package:fitness_loginpage/view/login/profile.dart';
 import 'package:fitness_loginpage/view/login/signup_view.dart';
 import 'package:flutter/material.dart';
@@ -18,6 +19,9 @@ class LoginView extends StatefulWidget {
 }
 
 class _LoginViewState extends State<LoginView> {
+  TextEditingController email=TextEditingController();
+  TextEditingController password=TextEditingController();
+
   bool isCheck = false;
   @override
   Widget build(BuildContext context) {
@@ -91,14 +95,16 @@ class _LoginViewState extends State<LoginView> {
                RoundButton(
                     title: "Login",
                     icon: "assets/images/Login.png",
-                    onPressed: () {
+                    onPressed: () {{
+                      LoginController.login(email: email.text, password: password.text, context: context);
+                    }
                       Navigator.push(
                           context,
                           MaterialPageRoute(
                               builder: (context) =>
                                   const CompleteProfileView()));
 
-                    }),
+                    },),
                 SizedBox(
                   height: media.width * 0.04,
                 ),
