@@ -86,7 +86,7 @@ class _SignUpViewState extends State<SignUpView> {
                     rigtIcon: TextButton(
                          onPressed: () {},
                         //  {
-                        //           setState(() {
+                        //   setState(() {
                         //               // ignore: unused_label
                         //               obscureText: false;
                         //           });

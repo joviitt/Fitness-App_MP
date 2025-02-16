@@ -1,7 +1,7 @@
 import 'package:fitness_loginpage/view/login/login_view.dart';
 import 'package:fitness_loginpage/view/login/welcome.dart';
 import 'package:flutter/material.dart';
-
+import 'package:firebase_auth/firebase_auth.dart';
 class Splashscreen extends StatefulWidget {
   const Splashscreen({super.key});
 
@@ -11,14 +11,23 @@ class Splashscreen extends StatefulWidget {
 
 class _SplashscreenState extends State<Splashscreen> {
 
+  var user = FirebaseAuth.instance.currentUser;
+
   @override
   void initState() {
 
     // Check for user login status
 
-    Future.delayed(Duration(seconds: 5), () {
+    Future.delayed(Duration(seconds: 3), () {
+      
+      if(user == null){
+          openLogin();
+      }
+      else{
+        openDashboard();
+      }
 
-      openDashboard();
+      
     });
 
     // TODO: implement initState
