@@ -1,4 +1,6 @@
 
+// ignore_for_file: use_build_context_synchronously, non_constant_identifier_names
+
 import 'package:fitness_loginpage/view/login/login_view.dart';
 import 'package:flutter/material.dart';
 import '../../common/color_extention.dart';
@@ -62,6 +64,7 @@ SizedBox(
                 Navigator.pushAndRemoveUntil(context,MaterialPageRoute
                 (builder: (context){
                   return LoginView();
+                // ignore: avoid_types_as_parameter_names
                 }), (Route){
                     return false;
                   });
