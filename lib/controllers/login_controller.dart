@@ -10,26 +10,31 @@ class LoginController {
     required String password,
     required BuildContext context,
   }) async {
-    try {
+    try{
       // Attempt sign-in
-      UserCredential userCredential = await FirebaseAuth.instance
+      await FirebaseAuth.instance
           .signInWithEmailAndPassword(email: email, password: password);
+        SnackBar messageSnackBar = SnackBar(
+        backgroundColor: Colors.green,
+        content: Text("Logged in successfully"),
+      );
+            ScaffoldMessenger.of(context).showSnackBar(messageSnackBar);
 
-      // Check if the user is successfully authenticated
-      if (userCredential.user != null) {
-        // Redirect to CompleteProfileView
         Navigator.pushAndRemoveUntil(
           context,
-          MaterialPageRoute(builder: (context) => CompleteProfileView()),
-          (route) => false, // Remove all previous routes from the stack
+          MaterialPageRoute(builder: (context){ return CompleteProfileView();}
+          ),
+      (route) {return false;} // Remove all previous routes from the stack
         );
+         
+      
         print("Logged in successfully");
       }
-    } catch (e) {
+       catch (e) {
       // Show error message
       SnackBar messageSnackBar = SnackBar(
         backgroundColor: Colors.red,
-        content: Text("Invalid Email or Password"),
+        content: Text("Invalid Email"),
       );
 
       ScaffoldMessenger.of(context).showSnackBar(messageSnackBar);

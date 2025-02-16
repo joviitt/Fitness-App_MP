@@ -54,7 +54,8 @@ class _LoginViewState extends State<LoginView> {
                 SizedBox(
                   height: media.width * 0.04,
                 ),
-                const RoundTextField(
+                RoundTextField(
+                  controller: email,
                   hitText: "Email",
                   icon: "assets/images/mail.png",
                   keyboardType: TextInputType.emailAddress,
@@ -63,6 +64,7 @@ class _LoginViewState extends State<LoginView> {
                   height: media.width * 0.04,
                 ),
                 RoundTextField(
+                  controller: password,
                   hitText: "Password",
                   icon: "assets/images/passwd.png",
                   obscureText: true,

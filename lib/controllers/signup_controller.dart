@@ -1,7 +1,7 @@
 // ignore_for_file: use_build_context_synchronously, avoid_print
 
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:fitness_loginpage/view/login/login_view.dart';
+//import 'package:fitness_loginpage/view/login/login_view.dart';
 import 'package:fitness_loginpage/view/login/profile.dart';
 //import 'package:fitness_loginpage/view/login/profile.dart';
 import 'package:flutter/material.dart';
