@@ -5,22 +5,27 @@ import 'package:fitness_loginpage/firebase_options.dart';
 import 'package:fitness_loginpage/view/login/signup_view.dart';
 import 'package:fitness_loginpage/view/login/login_view.dart';
 import 'package:fitness_loginpage/view/login/splashscreen.dart';
-//import 'package:fitness_loginpage/view/on_boarding/on_boarding_view.dart';
+import 'package:fitness_loginpage/view/login/welcome.dart';
 import 'package:fitness_loginpage/view/on_boarding/started_view.dart';
-//import 'package:fitness_loginpage/view/on_boarding/on_boarding_view.dart';
-//import 'package:fitness_loginpage/view/on_boarding/on_boarding_view.dart';
+import 'package:fitness_loginpage/view/on_boarding/on_boarding_view.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'common/color_extention.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
-  runApp(const MyApp());
+  WidgetsFlutterBinding.ensureInitialized();
+  SharedPreferences prefs = await SharedPreferences.getInstance();
+  bool hasSeenOnboarding = prefs.getBool('seenOnboarding') ?? false;
+
+  runApp(MyApp(hasSeenOnboarding: hasSeenOnboarding));
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  final bool hasSeenOnboarding;
+  const MyApp({super.key, required this.hasSeenOnboarding});
 
   // This widget is the root of your application.
   @override
@@ -47,7 +52,7 @@ class MyApp extends StatelessWidget {
         primaryColor: TColor.primaryColor1,
         fontFamily: "Poppins"
       ),
-      home: const Splashscreen(),
+      home: hasSeenOnboarding ? WelcomeView() : StartedView(),
     );
   }
 }

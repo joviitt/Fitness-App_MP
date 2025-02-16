@@ -30,7 +30,7 @@ class _SplashscreenState extends State<Splashscreen> {
       
     });
 
-    // TODO: implement initState
+
     super.initState();
   }
 

@@ -1,12 +1,22 @@
 
 
 import 'package:fitness_loginpage/common/color_extention.dart';
+import 'package:fitness_loginpage/view/login/welcome.dart';
 import 'package:fitness_loginpage/view/on_boarding/on_boarding_view.dart';
 import 'package:flutter/material.dart';
-
-
 import 'package:fitness_loginpage/common_widget/round_button.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
+Future<void> completeOnboarding(context) async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    await prefs.setBool('seenOnboarding', true);
+
+    // Navigate to HomeScreen after completing onboarding
+    Navigator.pushReplacement(
+      context,
+      MaterialPageRoute(builder: (context) => WelcomeView()),
+    );
+}
 
 class StartedView extends StatefulWidget {
   const StartedView({super.key});

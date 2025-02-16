@@ -139,8 +139,7 @@ class _SignUpViewState extends State<SignUpView> {
                       //create an account
                       SignupController.createAccount(email: email.text, password: password.text, context: context);
                     }
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => const LoginView()  ));
-                   }, icon: '',),
+                   }),
                   SizedBox(
                     height: media.width * 0.04,
                   ),
