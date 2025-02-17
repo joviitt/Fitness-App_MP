@@ -19,6 +19,12 @@ class SignupController {
 
       // Check if the user was created successfully
       if (userCredential.user != null) {
+
+        SnackBar messageSnackBar = SnackBar(
+        backgroundColor: Colors.green,
+        content: Text("Account Created Successfully"),
+      );
+            ScaffoldMessenger.of(context).showSnackBar(messageSnackBar);
         
         // Redirect to CompleteProfileView
         Navigator.pushAndRemoveUntil(
