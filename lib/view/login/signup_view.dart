@@ -24,7 +24,7 @@ class SignUpView extends StatefulWidget {
 
 class _SignUpViewState extends State<SignUpView> {  
 
-  var userform =GlobalKey<FormState>();
+  //var userform =GlobalKey<FormState>();
   TextEditingController email=TextEditingController();
   TextEditingController password=TextEditingController();
   TextEditingController fname=TextEditingController();
@@ -39,7 +39,7 @@ class _SignUpViewState extends State<SignUpView> {
       body: Form(
         child: SingleChildScrollView(
           child: SafeArea(
-            key: userform,
+            //key: userform,
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: Column(
@@ -169,61 +169,66 @@ class _SignUpViewState extends State<SignUpView> {
                       )),
                     ],
                   ),
-                  SizedBox(
-                    height: media.width * 0.04,
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      GestureDetector(
-                        onTap: () {},
-                        child: Container(
-                          width: 50,
-                          height: 50,
-                          alignment: Alignment.center,
-                          decoration: BoxDecoration(
-                            color: TColor.white,
-                            border: Border.all(
-                              width: 1,
-                              color: TColor.gray.withOpacity(0.4),
-                            ),
-                            borderRadius: BorderRadius.circular(15),
-                          ),
-                          child: Image.asset(
-                            "assets/images/google.png",
-                            width: 50,
-                            height: 50,
-                          ),
-                        ),
-                      ),
+
+                  ElevatedButton(
+                    onPressed: () => SignupController().signInWithGoogle(),
+                    child: const Text("Google Sign-In")
+                    ),
+                  // SizedBox(
+                  //   height: media.width * 0.04,
+                  // ),
+                  // Row(
+                  //   mainAxisAlignment: MainAxisAlignment.center,
+                  //   children: [
+                  //     GestureDetector(
+                  //       onTap: () {},
+                  //       child: Container(
+                  //         width: 50,
+                  //         height: 50,
+                  //         alignment: Alignment.center,
+                  //         decoration: BoxDecoration(
+                  //           color: TColor.white,
+                  //           border: Border.all(
+                  //             width: 1,
+                  //             color: TColor.gray.withOpacity(0.4),
+                  //           ),
+                  //           borderRadius: BorderRadius.circular(15),
+                  //         ),
+                  //         child: Image.asset(
+                  //           "assets/images/google.png",
+                  //           width: 50,
+                  //           height: 50,
+                  //         ),
+                  //       ),
+                  //     ),
         
-                       SizedBox(
-                        width: media.width * 0.04,
-                      ),
+                  //      SizedBox(
+                  //       width: media.width * 0.04,
+                  //     ),
         
-                      GestureDetector(
-                        onTap: () {},
-                        child: Container(
-                          width: 50,
-                          height: 50,
-                          alignment: Alignment.center,
-                          decoration: BoxDecoration(
-                            color: TColor.white,
-                            border: Border.all(
-                              width: 1,
-                              color: TColor.gray.withOpacity(0.4),
-                            ),
-                            borderRadius: BorderRadius.circular(15),
-                          ),
-                          child: Image.asset(
-                            "assets/images/facebook.png",
-                            width: 50,
-                            height: 50,
-                          ),
-                        ),
-                      )
-                    ],
-                  ),
+                  //     GestureDetector(
+                  //       onTap: () {},
+                  //       child: Container(
+                  //         width: 50,
+                  //         height: 50,
+                  //         alignment: Alignment.center,
+                  //         decoration: BoxDecoration(
+                  //           color: TColor.white,
+                  //           border: Border.all(
+                  //             width: 1,
+                  //             color: TColor.gray.withOpacity(0.4),
+                  //           ),
+                  //           borderRadius: BorderRadius.circular(15),
+                  //         ),
+                  //         child: Image.asset(
+                  //           "assets/images/facebook.png",
+                  //           width: 50,
+                  //           height: 50,
+                  //         ),
+                  //       ),
+                  //     )
+                  //   ],
+                  // ),
                   SizedBox(
                     height: media.width * 0.04,
                   ),

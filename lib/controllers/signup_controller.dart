@@ -1,13 +1,19 @@
 // ignore_for_file: use_build_context_synchronously, avoid_print
 
+//import 'dart:nativewrappers/_internal/vm/lib/internal_patch.dart';
+
 import 'package:firebase_auth/firebase_auth.dart';
 //import 'package:fitness_loginpage/view/login/login_view.dart';
 import 'package:fitness_loginpage/view/login/profile.dart';
 //import 'package:fitness_loginpage/view/login/profile.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 
 class SignupController {
+
+  final FirebaseAuth _firebaseAuth =FirebaseAuth.instance;
+
   static Future<void> createAccount({
     required String email,
     required String password,
@@ -68,4 +74,24 @@ class SignupController {
       print("Signup failed: $e");
     }
   }
+
+
+  signInWithGoogle() async{
+
+  //begin interactive sign in process
+  final GoogleSignInAccount? gUser = await GoogleSignIn().signIn();
+
+  //obtain auth details from request
+  final GoogleSignInAuthentication gAuth = await gUser!.authentication;
+
+  //create a new credential for user
+  final credential = GoogleAuthProvider.credential(
+    accessToken: gAuth.accessToken,
+    idToken: gAuth.idToken,
+  );
+
+  return await _firebaseAuth.signInWithCredential(credential);
+  
 }
+}
+//google_sign_in
