@@ -25,6 +25,8 @@ class SignUpView extends StatefulWidget {
 class _SignUpViewState extends State<SignUpView> {
   TextEditingController email=TextEditingController();
   TextEditingController password=TextEditingController();
+  TextEditingController fname=TextEditingController();
+  TextEditingController lname=TextEditingController();
   
   bool isCheck = false;
   @override
@@ -57,6 +59,7 @@ class _SignUpViewState extends State<SignUpView> {
                    RoundTextField(
                     hitText: 'First Name',
                     icon: "assets/images/user_fn.png",
+                    controller: fname,
                   ),
                   SizedBox(
                     height: media.width * 0.04,
@@ -64,6 +67,7 @@ class _SignUpViewState extends State<SignUpView> {
                   RoundTextField(
                     hitText: "Last Name",
                     icon: "assets/images/user_ln.png",
+                    controller: lname,
                   ),
                   SizedBox(
                     height: media.width * 0.04,
@@ -137,7 +141,7 @@ class _SignUpViewState extends State<SignUpView> {
                    RoundButton(title: "Register",
                     onPressed: () {{
                       //create an account
-                      SignupController.createAccount(email: email.text, password: password.text, context: context);
+                      SignupController.createAccount(email: email.text, password: password.text,fname: fname.text,lname: lname.text, context: context);
                     }
                    }),
                   SizedBox(

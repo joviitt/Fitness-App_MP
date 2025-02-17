@@ -10,6 +10,8 @@ class SignupController {
   static Future<void> createAccount({
     required String email,
     required String password,
+    required String fname,
+    required String lname,
     required BuildContext context,
   }) async {
     try {
