@@ -5,6 +5,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:fitness_loginpage/view/login/profile.dart';
 //import 'package:fitness_loginpage/view/login/profile.dart';
 import 'package:flutter/material.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 class SignupController {
   static Future<void> createAccount({
@@ -19,6 +20,26 @@ class SignupController {
       UserCredential userCredential = await FirebaseAuth.instance
           .createUserWithEmailAndPassword(email: email, password: password);
 
+
+      var userId = FirebaseAuth.instance.currentUser!.uid;
+
+      var db = FirebaseFirestore.instance;
+
+      Map<String, dynamic> data ={
+        "first_name":fname,
+        "last_name":lname,
+        "email":email,
+        "id":userId.toString(),
+
+      };
+
+      try{
+      await db.collection("users").doc(userId.toString()).set(data);
+      }
+      catch(e)
+      {
+        print(e);
+      }
       // Check if the user was created successfully
       if (userCredential.user != null) {
 

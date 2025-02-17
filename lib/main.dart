@@ -17,15 +17,15 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   WidgetsFlutterBinding.ensureInitialized();
-  SharedPreferences prefs = await SharedPreferences.getInstance();
-  bool hasSeenOnboarding = prefs.getBool('seenOnboarding') ?? false;
+  //SharedPreferences prefs = await SharedPreferences.getInstance();
+  //bool hasSeenOnboarding = prefs.getBool('seenOnboarding') ?? false;
 
-  runApp(MyApp(hasSeenOnboarding: hasSeenOnboarding));
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  final bool hasSeenOnboarding;
-  const MyApp({super.key, required this.hasSeenOnboarding});
+  //final bool hasSeenOnboarding;
+  const MyApp({super.key, /*required this.hasSeenOnboarding*/});
 
   // This widget is the root of your application.
   @override
@@ -52,7 +52,7 @@ class MyApp extends StatelessWidget {
         primaryColor: TColor.primaryColor1,
         fontFamily: "Poppins"
       ),
-      home: hasSeenOnboarding ? Splashscreen() : StartedView(),
+      home:Splashscreen(),
     );
   }
 }

@@ -34,7 +34,7 @@ class LoginController {
       // Show error message
       SnackBar messageSnackBar = SnackBar(
         backgroundColor: Colors.red,
-        content: Text("Invalid Email"),
+        content: Text("Invalid Email or Password"),
       );
 
       ScaffoldMessenger.of(context).showSnackBar(messageSnackBar);

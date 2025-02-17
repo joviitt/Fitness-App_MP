@@ -7,6 +7,7 @@ import '../../common/color_extention.dart';
 //import '../../common_widget/round_button.dart';
 //import '../main_tab/main_tab_view.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+//import 'package:cloud_firestore/cloud_firestore.dart';
 
 class WelcomeView extends StatefulWidget {
   const WelcomeView({super.key});
@@ -18,7 +19,27 @@ class WelcomeView extends StatefulWidget {
 class _WelcomeViewState extends State<WelcomeView> {
 
 
-  var user = FirebaseAuth.instance.currentUser;
+   var user = FirebaseAuth.instance.currentUser;
+//   var db = FirebaseFirestore.instance;
+
+//   Future<String?> getFirstName(String userId) async {
+//   try {
+//     DocumentSnapshot userDoc = 
+//         await FirebaseFirestore.instance.collection('users').doc(userId).get();
+
+//     if (userDoc.exists) {
+//       var fname= userDoc['fname']; // Assuming 'first_name' is the field name
+//     } else {
+//       print('User not found');
+//       return null;
+//     }
+//   } catch (e) {
+//     print('Error fetching user: $e');
+//     return null;
+//   }
+// }
+
+
 
   @override
   Widget build(BuildContext context) {

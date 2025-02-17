@@ -22,7 +22,9 @@ class SignUpView extends StatefulWidget {
   State<SignUpView> createState() => _SignUpViewState();
 }
 
-class _SignUpViewState extends State<SignUpView> {
+class _SignUpViewState extends State<SignUpView> {  
+
+  var userform =GlobalKey<FormState>();
   TextEditingController email=TextEditingController();
   TextEditingController password=TextEditingController();
   TextEditingController fname=TextEditingController();
@@ -37,6 +39,7 @@ class _SignUpViewState extends State<SignUpView> {
       body: Form(
         child: SingleChildScrollView(
           child: SafeArea(
+            key: userform,
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: Column(
