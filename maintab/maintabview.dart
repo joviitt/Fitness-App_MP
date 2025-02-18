@@ -5,9 +5,9 @@ import 'package:fitness/view/main_tab/select_view.dart';
 import 'package:fitness_loginpage/common/color_extention.dart';
 import 'package:flutter/material.dart';
 
-import '../home/home_view.dart';
+//import '../home/home_view.dart';
 import '../profile/profile_view.dart';
-import '../workout_tracker/workout_tracker_view.dart';
+//import '../workout_tracker/workout_tracker_view.dart';
 
 class MainTabView extends StatefulWidget {
   const MainTabView({super.key});

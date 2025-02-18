@@ -16,7 +16,30 @@ class CompleteProfileView extends StatefulWidget {
 
 class _CompleteProfileViewState extends State<CompleteProfileView> {
   TextEditingController txtDate = TextEditingController();
+  DateTime? _selectedData= DateTime.now();
+  String displayDate="Date of Brith";
   String? selectedGender;
+
+  void _openDatePicker() async {
+    final now = DateTime.now();
+    final firstDate = DateTime(now.year - 100, now.month, now.day);
+    final pickedDate = await showDatePicker(
+      context: context,
+      initialDate: now,
+      firstDate: firstDate,
+      lastDate: now,
+    );
+    setState(
+      () {
+        if(pickedDate!=null){
+          _selectedData = pickedDate;
+          setState(() {
+            displayDate="${_selectedData!.day}/${_selectedData!.month}/${_selectedData!.year}";
+          });
+        }
+      },
+    );
+  }
 
 
   @override
@@ -116,8 +139,10 @@ class _CompleteProfileViewState extends State<CompleteProfileView> {
                       ),
                       RoundTextField(
                         controller: txtDate,
-                        hitText: "Date of Birth",
+                        hitText: displayDate,
+                        
                         icon: "assets/images/Calendar.png",
+                        rigtIcon: IconButton(onPressed: (){_openDatePicker();},icon: Icon(Icons.calendar_month_outlined)),
                       ),
                       SizedBox(
                         height: media.width * 0.04,
