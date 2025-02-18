@@ -37,6 +37,9 @@ class _LoginViewState extends State<LoginView> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
+                SizedBox(
+                  height: media.width * 0.04,
+                ),
                 Text(
                   "Hey there,",
                   style: TextStyle(color: TColor.gray, fontSize: 16),
@@ -85,6 +88,9 @@ class _LoginViewState extends State<LoginView> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
+                    SizedBox(
+                  height: media.width * 0.09,
+                            ),
                     Text(
                       "Forgot your password?",
                       style: TextStyle(
@@ -152,29 +158,29 @@ class _LoginViewState extends State<LoginView> {
                       ),
                     ),
                     SizedBox(
-                      width: media.width * 0.04,
+                      height: media.width * 0.04,
                     ),
-                    GestureDetector(
-                      onTap: () {},
-                      child: Container(
-                        width: 50,
-                        height: 50,
-                        alignment: Alignment.center,
-                        decoration: BoxDecoration(
-                          color: TColor.white,
-                          border: Border.all(
-                            width: 1,
-                            color: TColor.gray.withOpacity(0.4),
-                          ),
-                          borderRadius: BorderRadius.circular(15),
-                        ),
-                        child: Image.asset(
-                          "assets/images/facebook.png",
-                          width: 50,
-                          height: 50,
-                        ),
-                      ),
-                    )
+                    // GestureDetector(
+                    //   onTap: () {},
+                    //   child: Container(
+                    //     width: 50,
+                    //     height: 50,
+                    //     alignment: Alignment.center,
+                    //     decoration: BoxDecoration(
+                    //       color: TColor.white,
+                    //       border: Border.all(
+                    //         width: 1,
+                    //         color: TColor.gray.withOpacity(0.4),
+                    //       ),
+                    //       borderRadius: BorderRadius.circular(15),
+                    //     ),
+                    //     // child: Image.asset(
+                    //     //   "assets/images/facebook.png",
+                    //     //   width: 50,
+                    //     //   height: 50,
+                    //     // ),
+                    //   ),
+                    // )
                   ],
                 ),
                 SizedBox(

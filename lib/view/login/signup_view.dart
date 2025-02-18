@@ -45,6 +45,9 @@ class _SignUpViewState extends State<SignUpView> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
+                  SizedBox(
+                  height: media.width * 0.04,
+                ),
                   Text(
                     "Hey there,",
                     style: TextStyle(color: TColor.gray, fontSize: 16),
@@ -111,6 +114,9 @@ class _SignUpViewState extends State<SignUpView> {
                               color: TColor.gray,
                             ))),
                   ),
+                  SizedBox(
+                  height: media.width * 0.03,
+                ),
                   Row(
                     // crossAxisAlignment: CrossAxisAlignment.,
                     children: [
@@ -170,9 +176,34 @@ class _SignUpViewState extends State<SignUpView> {
                     ],
                   ),
 
-                  ElevatedButton(
-                    onPressed: () => SignupController().signInWithGoogle(),
-                    child: const Text("Google Sign-In")
+                  SizedBox(
+                    height: media.width * 0.04,
+                  ),
+
+                  // ElevatedButton(
+                  //   onPressed: () => SignupController().signInWithGoogle(),
+                  //   child: const Text("Google Sign-In")
+                  //   ),
+                    GestureDetector(
+                      onTap: () =>SignupController().signInWithGoogle(),
+                      child: Container(
+                        width: 50,
+                        height: 50,
+                        alignment: Alignment.center,
+                        decoration: BoxDecoration(
+                          color: TColor.white,
+                          border: Border.all(
+                            width: 1,
+                            color: TColor.gray.withOpacity(0.4),
+                          ),
+                          borderRadius: BorderRadius.circular(15),
+                        ),
+                        child: Image.asset(
+                          "assets/images/google.png",
+                          width: 50,
+                          height: 50,
+                        ),
+                      ),
                     ),
                   // SizedBox(
                   //   height: media.width * 0.04,

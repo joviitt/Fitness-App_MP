@@ -52,7 +52,7 @@ class MyApp extends StatelessWidget {
         primaryColor: TColor.primaryColor1,
         fontFamily: "Poppins"
       ),
-      home:Splashscreen(),
+      home:StartedView(),
     );
   }
 }

@@ -72,11 +72,19 @@ SizedBox(
                     fontSize: 20,
                     fontWeight: FontWeight.w700),
               ),
-              Text((user?.email ?? "").toString()),
+              Text((user?.email ?? "").toString(),
+                  style: TextStyle(fontSize: 15),),
+              SizedBox(
+                height: media.width * 0.1,
+              ),
               Text(
                 "You are all set now, let’s reach your\ngoals together with us",
                 textAlign: TextAlign.center,
-                style: TextStyle(color: TColor.gray, fontSize: 12),
+                style: TextStyle(color: TColor.gray, fontSize: 15),
+              ),
+
+              SizedBox(
+                height: media.width * 0.1,
               ),
               ElevatedButton(onPressed: ()async {
 
