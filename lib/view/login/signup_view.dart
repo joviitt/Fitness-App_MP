@@ -260,9 +260,6 @@ class _SignUpViewState extends State<SignUpView> {
                   //     )
                   //   ],
                   // ),
-                  SizedBox(
-                    height: media.width * 0.04,
-                  ),
                   TextButton(
                     onPressed: () {
                        Navigator.pop(context);

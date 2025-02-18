@@ -13,8 +13,8 @@ import 'package:fitness_loginpage/main.dart';
 void main() {
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
     // Build our app and trigger a frame.
-    bool hasSeenOnboarding = false;
-    await tester.pumpWidget(MyApp(hasSeenOnboarding:hasSeenOnboarding));
+    //bool hasSeenOnboarding = false;
+    await tester.pumpWidget(MyApp());
 
     // Verify that our counter starts at 0.
     expect(find.text('0'), findsOneWidget);

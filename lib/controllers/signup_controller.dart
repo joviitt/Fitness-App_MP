@@ -81,8 +81,11 @@ class SignupController {
   //begin interactive sign in process
   final GoogleSignInAccount? gUser = await GoogleSignIn().signIn();
 
+  // user cancels 
+  if(gUser==null) return;
+
   //obtain auth details from request
-  final GoogleSignInAuthentication gAuth = await gUser!.authentication;
+  final GoogleSignInAuthentication gAuth = await gUser.authentication;
 
   //create a new credential for user
   final credential = GoogleAuthProvider.credential(
@@ -91,6 +94,8 @@ class SignupController {
   );
 
   return await _firebaseAuth.signInWithCredential(credential);
+
+
   
 }
 }
