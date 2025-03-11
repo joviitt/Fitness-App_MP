@@ -2,6 +2,7 @@
 // ignore_for_file: unused_import
 
 import 'package:fitness_loginpage/firebase_options.dart';
+import 'package:fitness_loginpage/view/login/profile.dart';
 import 'package:fitness_loginpage/view/login/signup_view.dart';
 import 'package:fitness_loginpage/view/login/login_view.dart';
 import 'package:fitness_loginpage/view/login/splashscreen.dart';
@@ -52,7 +53,7 @@ class MyApp extends StatelessWidget {
         primaryColor: TColor.primaryColor1,
         fontFamily: "Poppins"
       ),
-      home:StartedView(),
+      home:LoginView(),
     );
   }
 }
