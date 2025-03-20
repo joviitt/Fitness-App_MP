@@ -5,6 +5,7 @@
 import 'package:fitness_loginpage/common_widget/round_button.dart';
 import 'package:fitness_loginpage/common_widget/round_textfield.dart';
 import 'package:fitness_loginpage/controllers/login_controller.dart';
+import 'package:fitness_loginpage/view/login/forgotpassword_view.dart';
 // ignore: unused_import
 import 'package:fitness_loginpage/view/login/profile.dart';
 import 'package:fitness_loginpage/view/login/signup_view.dart';
@@ -89,14 +90,22 @@ class _LoginViewState extends State<LoginView> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     SizedBox(
-                  height: media.width * 0.09,
+                  height: media.width * 0.15,
                             ),
-                    Text(
-                      "Forgot your password?",
-                      style: TextStyle(
-                          color: TColor.gray,
-                          fontSize: 10,
-                          decoration: TextDecoration.underline),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(context, MaterialPageRoute(builder: (context)
+                        {
+                          return ForgotPasswordPage();
+                        },));
+                      },
+                      child: Text(
+                        "Forgot your password?",
+                        style: TextStyle(
+                                color: Colors.blue,
+                                fontSize: 12,
+                                fontWeight: FontWeight.w700),
+                      ),
                     ),
                   ],
                 ),
@@ -204,7 +213,7 @@ class _LoginViewState extends State<LoginView> {
                         child: Text(
                           "Register",
                           style: TextStyle(
-                              color: TColor.black,
+                              color: Colors.blue,
                               fontSize: 14,
                               fontWeight: FontWeight.w700),
                         ),
