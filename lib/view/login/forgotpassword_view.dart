@@ -11,15 +11,30 @@ class ForgotPasswordPage extends StatefulWidget {
 
 class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
 
-  TextEditingController email_controller=TextEditingController();
+  final email_controller=TextEditingController();
 
   @override
   void dispose() {
     email_controller.dispose();
     super.dispose();
   }
+//   bool isValidEmail(String email) {
+//   final RegExp regex = RegExp(r"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$");
+//   return regex.hasMatch(email);
+// }
 
   Future passwordReset() async{
+  //   if (!isValidEmail(email_controller.text.trim())) {
+  //   showDialog(
+  //     context: context,
+  //     builder: (context) {
+  //       return AlertDialog(
+  //         content: Text('Please enter a valid email address.'),
+  //       );
+  //     },
+  //   );
+  //   return; // Exit the function if the email is invalid
+  // }
     try{
     await FirebaseAuth.instance.sendPasswordResetEmail(email:email_controller.text.trim());
     showDialog(
