@@ -277,9 +277,9 @@ class _SignUpViewState extends State<SignUpView> {
                         TextButton(
                           child: Text("Login",
                           style: TextStyle(
-                              color: TColor.black,
-                              fontSize: 14,
-                              fontWeight: FontWeight.w700),
+                                color: Colors.blue,
+                                fontSize: 14,
+                                fontWeight: FontWeight.w700),
                         ),
                         onPressed: () {
                        Navigator.push(
